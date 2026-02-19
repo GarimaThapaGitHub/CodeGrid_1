@@ -1,5 +1,6 @@
 import type { Metadata } from "next"
 import { Geist, Geist_Mono } from "next/font/google"
+import { HydrationSuppressor } from "@/components/hydration-suppressor"
 import "./globals.css"
 
 const geistSans = Geist({
@@ -23,6 +24,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className="antialiased" suppressHydrationWarning>
+        <HydrationSuppressor />
         {children}
       </body>
     </html>
